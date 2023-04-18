@@ -2,6 +2,8 @@ FROM mongo-express
 
 RUN apk update && apk add git
 
+RUN apk add --update nodejs npm
+
 RUN git clone https://github.com/anderact/dsnlab04.git /app
 
 WORKDIR /app
