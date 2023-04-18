@@ -1,8 +1,13 @@
 #imagen base de Node 19
 FROM node:19
 
+#instalación de gestor apk + git
+RUN apk add --no-cache apk-tools && \
+    ln -s /sbin/apk /usr/bin/apk && \
+    apk update && \
+    apk add git
+
 #clonación del repositorio
-RUN apk update && apk add git
 RUN git clone https://github.com/anderact/dsnlab04.git /usr/src/app
 
 #definición del directorio de trabajo
